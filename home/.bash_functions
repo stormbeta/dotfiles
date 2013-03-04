@@ -21,7 +21,7 @@ function path {
 }
 
 function updatehome {
-  local homesick=${HOME}/.homesick
+  local homesick=${HOME}/.homeshick
 
   # Initialize homesick if needed.
   if [[ ! -x ${homesick} ]]; then
