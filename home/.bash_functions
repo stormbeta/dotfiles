@@ -16,9 +16,39 @@ function dup () {
 }
 
 # Print out the current path in a nice way
-function path() {
-    local IFS=: && printf "%s\n" ${PATH}
+function path {
+  local IFS=: && printf "%s\n" ${PATH}
 }
+
+function updatehome {
+  local homesick=${HOME}/.homesick
+
+  # Initialize homesick if needed.
+  if [[ ! -x ${homesick} ]]; then
+    cp -r ${HOME}/.ssh ${HOME}/.ssh_bkup
+    curl -sL https://raw.github.com/andsens/homeshick/master/install.sh | bash
+    ${homesick} clone stormbeta/dotfiles
+  fi
+
+  # Update homesick repos.
+  ${homesick} pull && ${homesick} symlink
+  source ${HOME}/.bashrc
+  ( cd ${HOME}/.vim; make install )
+
+  # Restore .ssh if needed.
+  if [[ -d ${HOME}/.ssh_bkup ]]; then
+    cp -i ${HOME}/.ssh_bkup/* ${HOME}/.ssh/
+    rm -rf ${HOME}/.ssh_bkup
+  fi
+}
+
+#TODO: Sort ssh keys before enabling this
+#function initializehome {
+ #local target=${1}
+
+ #ssh-copy-id ${target}
+ #ssh -At ${target} "$(declare -f updatehome); updatehome; bash -l"
+#}
 
 # Alias a command with a replacement only if both exist.
 function smart-alias() {
