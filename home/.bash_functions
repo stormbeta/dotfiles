@@ -32,7 +32,7 @@ function smart-alias() {
 }
 
 # Be smart about how we add new stuff to our PATH
-function pathmunge () {
+function pathmunge() {
   if ! echo ${PATH} | grep -qE "(^|:)${1}($|:)" ; then
     if [[ "${2}" == "after" ]] ; then
       PATH=${PATH}:${1}

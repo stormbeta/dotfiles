@@ -7,11 +7,11 @@
 # Source platform dependent stuff to help with paths, etc.
 source ~/.bash_$(uname | tr "[:upper:]" "[:lower:]")
 
-if [[ -f "~/.bash_functions" ]]; then
-    source "~/.bash_functions" || \
+#if [[ -e "~/.bash_functions" ]]; then
+    source ~/.bash_functions || \
     source_if_exists "~/.bash_aliases" || \
-    source_if_exists "~/.bash_ps1" || \
-fi
+    source_if_exists "~/.bash_ps1"
+#fi
 
 pathmunge "~/bin"
 
