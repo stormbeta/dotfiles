@@ -1,0 +1,11 @@
+"Original
+set smartindent
+set autoindent
+set tabstop=2
+set shiftwidth=2
+set number
+inoremap ;; <Esc>:
+map ; <Right>
+map j <Left>
+map k <Up>
+map l <Down>

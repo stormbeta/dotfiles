@@ -1,0 +1,2 @@
+#Add gradle file support
+--type-add=groovy=.gradle

@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/s/bach/k/under/millerj/test/cs453j/pa4'
+let g:netrw_dirhist_2='/s/bach/k/under/millerj/.ssh'
+let g:netrw_dirhist_3='/s/bach/k/under/millerj/public_html/a7'
+let g:netrw_dirhist_4='/s/bach/k/under/millerj/480/.git'

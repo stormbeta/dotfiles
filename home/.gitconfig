@@ -1,0 +1,31 @@
+[core]
+    editor = vim
+
+[color]
+    status      = auto
+    branch      = auto
+    diff        = auto
+    interactive = auto
+
+[user]
+    name = Jason Miller
+    email = jason.miller@readytalk.com
+
+[alias]
+    unstage = reset HEAD
+    untrack = rm --cached
+    st = status
+    co = checkout
+    co-remote = "!f(){ remote=$2; if $remote ; then remote='origin'; fi; git checkout -b $1 $remote/$1; }; f"
+    br = branch
+    bl = blame
+    brmv = branch -m
+    svn-update = svn rebase
+    svn-commit = svn dcommit
+    whatadded = log --diff-filter=A
+
+[sendemail]
+    ;smtpserver smtp.gmail.com
+    ;smtpserverport 587
+    ;sendemail.smtpencryption tls
+    ;smtpuser 

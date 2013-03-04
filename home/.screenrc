@@ -1,0 +1,9 @@
+#startup message off
+caption always "%-LW%{= BW}%50>%n%f* %t%{-}%+Lw%< %{=b BW} %H %{-} %1 %c %d/%m/%Y"
+#bindkey ^TAB, next
+#shelltitle ""
+autodetach on
+defscrollback 65500
+#screen -t "log" 0 tail -F /var/log/messages 
+shell -/bin/bash
+vbell off
