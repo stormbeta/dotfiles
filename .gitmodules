@@ -1,0 +1,21 @@
+[submodule "home/.vim/bundle/VimClojure"]
+	path = home/.vim/bundle/VimClojure
+	url = git://github.com/vim-scripts/VimClojure
+[submodule "home/.vim/bundle/ack.vim"]
+	path = home/.vim/bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim
+[submodule "home/.vim/bundle/nerdcommenter"]
+	path = home/.vim/bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter
+[submodule "home/.vim/bundle/pig.vim"]
+	path = home/.vim/bundle/pig.vim
+	url = git://github.com/vim-scripts/pig.vim
+[submodule "home/.vim/bundle/vim-colors-solarized"]
+	path = home/.vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized
+[submodule "home/.vim/bundle/vim-markdown"]
+	path = home/.vim/bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown
+[submodule "home/.vim/bundle/vim-repeat"]
+	path = home/.vim/bundle/vim-repeat
+	url = git://github.com/tpope/vim-repeat
