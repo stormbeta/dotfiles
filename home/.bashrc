@@ -8,16 +8,16 @@
 source ~/.bash_$(uname | tr "[:upper:]" "[:lower:]")
 
 #if [[ -e "~/.bash_functions" ]]; then
-    source ~/.bash_functions || \
-    source_if_exists "~/.bash_aliases" || \
-    source_if_exists "~/.bash_ps1"
+    source ~/.bash_functions
+    source ~/.bash_ps1
+    source ~/.bash_aliases
 #fi
 
 pathmunge "~/bin"
 
 chmod 700 ~/.homesick/*
 
-[[ -f "~/.fonts" ]] || fc-cache -f "~/.fonts"
+#[[ -f "~/.fonts" ]] || fc-cache -f "~/.fonts"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 HISTCONTROL=ignoreboth

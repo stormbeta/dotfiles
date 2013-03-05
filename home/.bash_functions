@@ -16,9 +16,9 @@ function dup () {
 }
 
 # Print out the current path in a nice way
-function path {
-  local IFS=: && printf "%s\n" ${PATH}
-}
+#function path {
+  #local IFS=: && printf "%s\n" ${PATH}
+#}
 
 function updatehome {
   local homesick=${HOME}/.homeshick

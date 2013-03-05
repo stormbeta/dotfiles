@@ -10,7 +10,7 @@ reset_style='\[\033[00m\]'
  # Prompt variable:
 
  
-PS1="$status_style"'$fill \t\n'"$prompt_style"'${debian_chroot:+($debian_chroot)}\u@\h:\w\[\033[00m\]$(unalias git && __git_ps1 2>/dev/null)\$'"$command_style "
+PS1="$status_style"'$fill \t\n'"$prompt_style"'${debian_chroot:+($debian_chroot)}\u@\h:\w\[\033[00m\]$(__git_ps1 2>/dev/null)\$'"$command_style "
 #PS1="$status_style"'$fill \t\n'"$host_style"'${debian_chroot:+($debian_chroot)}\u@\h:'"$path_style"'\w\$'"$command_style "
 
  
