@@ -21,10 +21,11 @@ au BufReadPost *.pig setlocal filetype=pig
 au BufReadPost *.as setlocal filetype=actionscript
 au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead *.pp setf ruby
+
 "Relative numbering for movement
 au InsertEnter * :set nu
 "Absolute numbering for editing
-"au InsertLeave * :set rnu
+au InsertLeave * :set rnu
 
 "GUI Options {{{
 au GUIEnter * set lines=43 columns=95
@@ -205,6 +206,7 @@ endif "}}}
    nnoremap <Leader>gb :Git branch<cr>
    nnoremap <Leader>gB :Git checkout 
    nnoremap <Leader>gu :Git fetch
+   nnoremap <Leader>gp :Git pull
 
    "Like alt+tab, but for buffers
    nnoremap <silent> \ :bnext<cr>

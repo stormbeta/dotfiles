@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/s/bach/k/under/millerj/test/cs453j/pa4'
-let g:netrw_dirhist_2='/s/bach/k/under/millerj/.ssh'
-let g:netrw_dirhist_3='/home/jason/zcs453/pa6'
-let g:netrw_dirhist_4='/home/jason/pig-0.9.2/contrib/piggybank/java/src/main/java/org/apache/pig/piggybank/comparison'
-let g:netrw_dirhist_5='/home/jason/pig-0.9.2/contrib/piggybank/java/src/main/java/org/apache/pig/piggybank'

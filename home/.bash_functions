@@ -15,10 +15,19 @@ function dup () {
   cp "${path}" $(dirname ${path})/${new}
 }
 
-# Print out the current path in a nice way
-#function path {
-  #local IFS=: && printf "%s\n" ${PATH}
-#}
+ #Print out the current path in a nice way
+function path {
+  local IFS=: && printf "%s\n" ${PATH}
+}
+
+function git-purge () {
+  echo -n 'Are you sure you want to purge this repo? y/N '
+  read -n1 c
+  echo ''
+  if [[ "${c}" == 'y' ]]; then
+    git reset --hard && git clean -Xfd
+  fi
+}
 
 function updatehome {
   local homesick=${HOME}/.homeshick

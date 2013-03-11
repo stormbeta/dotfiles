@@ -23,6 +23,7 @@
     svn-update = svn rebase
     svn-commit = svn dcommit
     whatadded = log --diff-filter=A
+    cleanse = clean -Xfd
 
 [sendemail]
     ;smtpserver smtp.gmail.com
