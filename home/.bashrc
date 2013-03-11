@@ -4,8 +4,10 @@
 #Ensure we're running an interactive terminal
 [ -z "$PS1" ] && return
 
+platform=$(uname | tr "[:upper:]" "[:lower:]")
+
 # Source platform dependent stuff to help with paths, etc.
-source ~/.bash_$(uname | tr "[:upper:]" "[:lower:]")
+source ~/.bash_${platform}
 
 #if [[ -e "~/.bash_functions" ]]; then
     source ~/.bash_functions
@@ -26,12 +28,16 @@ HISTCONTROL=ignoreboth
 stty -ixon
 stty stop ^X
 
+let bash_version=$(bash --version | grep -Po '(?<=version )\d+' | head -n1)
+
 #Useful shell options
 shopt -s checkwinsize
 shopt -s cdspell
 shopt -s extglob
 shopt -s histappend
-shopt -s autocd
-shopt -s globstar
-shopt -s dirspell
 shopt -s cdable_vars
+if [[ ${bash_version} -ge 4 ]]; then
+  shopt -s autocd
+  shopt -s globstar
+  shopt -s dirspell
+fi
