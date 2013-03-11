@@ -22,10 +22,14 @@ au BufReadPost *.as setlocal filetype=actionscript
 au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead *.pp setf ruby
 
-"Relative numbering for movement
-au InsertEnter * :set nu
-"Absolute numbering for editing
-au InsertLeave * :set rnu
+
+
+if version >= 703
+  "Relative numbering for movement
+  au InsertEnter * :set nu
+  "Absolute numbering for editing
+  au InsertLeave * :set rnu
+endif
 
 "GUI Options {{{
 au GUIEnter * set lines=43 columns=95
@@ -83,17 +87,19 @@ endif "}}}
 "}}}
 
 "Misc options {{{
+   if version >= 703
+     set relativenumber "Relative line numbers
+     set undofile       "Persistant undo history
+     set undodir=~/.vim-backup
+   endif
+   set backupdir=~/.vim-backup
    " set number       "I like relative better
    set showmatch      "Flash matching parens
-   set relativenumber "Relative line numbers
-   set undofile       "Persistant undo history
    set aw             "Autosave when appropriate
    set wildmenu       "Menubar
    set wildmode=list:longest
    set scrolloff=4    "Auto-scrolls screen near edges
    set updatetime=2000 "Affects visual marker indicators
-   set backupdir=~/.vim-backup
-   set undodir=~/.vim-backup
    set modelines=0    "Modelines are security risk
    set viminfo='100,<50,s10,h,n~/.viminfo
    set diffopt+=iwhite "Ignore whitespace in diff mode

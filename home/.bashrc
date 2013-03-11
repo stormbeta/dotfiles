@@ -15,6 +15,11 @@ source ~/.bash_${platform}
     source ~/.bash_aliases
 #fi
 
+if [[ "${platform}" == "darwin" ]]; then
+  unalias ls
+  alias ls='ls -G'
+fi
+
 pathmunge "~/bin"
 
 chmod 700 ~/.homesick/*

@@ -14,7 +14,7 @@ PS1="$status_style"'$fill \t\n'"$prompt_style"'${debian_chroot:+($debian_chroot)
 
 # Reset color for command output
  # (this one is invoked every time before a command is executed):
- trap 'echo -ne "\e[0m"' DEBUG
+ trap 'echo -ne "\033[0m"' DEBUG
  
 function prompt_command {
   # create a $fill of all screen width minus the time string and a space:
