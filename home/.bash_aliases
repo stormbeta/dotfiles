@@ -1,7 +1,7 @@
 #!/bin/bash
 #Bash aliases
 
-if [[ -n "$(uname -a | grep -i 'debian|ubuntu|mint')" ]]; then
+if [[ -n "$(uname --all | grep --ignore-case --perl-regex 'debian|ubuntu|mint')" ]]; then
     alias ack='ack-grep'
 fi
 
