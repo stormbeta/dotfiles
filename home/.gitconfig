@@ -24,6 +24,7 @@
     svn-commit = svn dcommit
     whatadded = log --diff-filter=A
     cleanse = clean -Xfd
+    rev-grep = "!f(){ git grep ${1} $(git rev-list --all); }; f"
 
 [sendemail]
     ;smtpserver smtp.gmail.com

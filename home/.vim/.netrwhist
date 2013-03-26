@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/jmiller/git/core_consolidated'
-let g:netrw_dirhist_2='/home/jmiller/git/core_consolidated/core_automation/build'
-let g:netrw_dirhist_3='/home/jmiller/git/deploy/lib/gradle'
-let g:netrw_dirhist_4='/home/jmiller/git/deploy/lib'
-let g:netrw_dirhist_5='/home/jmiller/.vim'
-let g:netrw_dirhist_6='/home/jmiller/git/core_consolidated/core_server/build'

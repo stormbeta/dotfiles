@@ -20,14 +20,24 @@ function path {
   local IFS=: && printf "%s\n" ${PATH}
 }
 
-function git-purge () {
-  echo -n 'Are you sure you want to purge this repo? y/N '
+function git-purify() {
+  echo -n 'Are you sure you want to purify this repo? y/N '
   read -n1 c
   echo ''
   if [[ "${c}" == 'y' ]]; then
     git reset --hard && git clean -Xfd
   fi
 }
+
+function git-purge() {
+  echo -n 'Are you sure you want to purge this repo? y/N '
+  read -n1 c
+  echo ''
+  if [[ "${c}" == 'y' ]]; then
+    git clean -Xfd && git reset --hard origin/master
+  fi
+}
+
 
 function updatehome {
   local homesick=${HOME}/.homeshick
