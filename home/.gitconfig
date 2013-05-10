@@ -25,6 +25,9 @@
     whatadded = log --diff-filter=A
     cleanse = clean -Xfd
     rev-grep = "!f(){ git grep ${1} $(git rev-list --all); }; f"
+    ;RESET = "!f(){ git reset --hard origin/$(git status --porcelain --bsuno | sed -r 's/## (.*)/\1/\'); }; f"
+    squish = rebase -i --onto master
+  ;push-branch= push 
 
 [sendemail]
     ;smtpserver smtp.gmail.com

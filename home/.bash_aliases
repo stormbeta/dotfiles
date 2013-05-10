@@ -5,6 +5,12 @@ if [[ -n "$(uname --all | grep --ignore-case --perl-regex 'debian|ubuntu|mint')"
     alias ack='ack-grep'
 fi
 
+if [[ -n "$(ls ~/the_silver_searcher/ag)" ]]; then
+  alias ag='~/the_silver_searcher/ag'
+fi
+
+alias gack="ack '\.(gradle|properties|xml)'"
+
 alias ls='ls --color=auto'
 alias sl='ls'
 alias ll='ls -l'
