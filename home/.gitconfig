@@ -27,7 +27,8 @@
     rev-grep = "!f(){ git grep ${1} $(git rev-list --all); }; f"
     ;RESET = "!f(){ git reset --hard origin/$(git status --porcelain --bsuno | sed -r 's/## (.*)/\1/\'); }; f"
     squish = rebase -i --onto master
-  ;push-branch= push 
+    update = "!f(){ git fetch; git pull origin $(git status -sb --porcelain | grep -oP '\\w+'); }; f"
+    ;update = "!g(){ git fetch; git pull origin $(git status -sb --porcelain | grep -Po '\w+'); }; g"
 
 [sendemail]
     ;smtpserver smtp.gmail.com

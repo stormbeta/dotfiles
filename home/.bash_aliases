@@ -5,8 +5,8 @@ if [[ -n "$(uname --all | grep --ignore-case --perl-regex 'debian|ubuntu|mint')"
     alias ack='ack-grep'
 fi
 
-if [[ -n "$(ls ~/the_silver_searcher/ag)" ]]; then
-  alias ag='~/the_silver_searcher/ag'
+if [[ -n "$(ls ~/.utils/bin/ag)" ]]; then
+  alias ag="${HOME}/.utils/bin/ag"
 fi
 
 alias gack="ack '\.(gradle|properties|xml)'"
@@ -20,7 +20,7 @@ alias lsh='ls -sh'
 
 # Work proxy
 #alias ssh-proxy='ssh -D 9000 -Nf 1900.readytalk.com 2>/dev/null'
-deploy='$(locate --regex "/home/.*/deploy/deploy.sh")'
+#deploy='$(locate --regex "/home/.*/deploy/deploy.sh")'
 
 # git shortcuts
 alias g='git status'
@@ -29,7 +29,7 @@ alias gf='git fetch'
 alias gb='git branch'
 alias gd='git diff'
 alias gcp='git cherry-pick'
-alias gw='./gradlew --daemon'
+alias gw="${HOME}/.utils/bin/gw"
 alias deploy="${deploy} jmdev"
 
 # git completion for shortcuts
