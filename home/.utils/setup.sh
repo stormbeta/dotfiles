@@ -36,7 +36,8 @@ function update-repos {
       case $repo in
         the_silver_searcher)
           cd $repo
-          git-update && ./build.sh && cp ag "${local_bin}/"
+          git-update && ./build.sh;
+          cp ag "${local_bin}/"
           ;;
       esac
     )
