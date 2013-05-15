@@ -44,6 +44,8 @@ function updatehome {
 
   # Initialize homesick if needed.
   if [[ ! -x ${homesick} ]]; then
+    #TODO Update this as the install script no longer exists
+    #Possibly fork homeshick
     cp -r ${HOME}/.ssh ${HOME}/.ssh_bkup
     curl -sL https://raw.github.com/andsens/homeshick/master/install.sh | bash
     ${homesick} clone stormbeta/dotfiles
@@ -53,6 +55,7 @@ function updatehome {
   ${homesick} pull && ${homesick} symlink
   source ${HOME}/.bashrc
   ( cd ${HOME}/.vim; make install )
+  ( cd ${HOME}/.utils; ./setup.sh )
 
   # Restore .ssh if needed.
   if [[ -d ${HOME}/.ssh_bkup ]]; then
