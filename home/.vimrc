@@ -63,8 +63,7 @@ endif "}}}
    set showmode      "Should always be on, but just in case
    set showcmd       "Display normal mode cmds in lower left
    set tildeop       "~ behaves like an operator
-   "set list listchars=tab:→\ ,trail:·
-   "set list listchars=tab:→\ ,trail:·
+   set list listchars=tab:→\ ,trail:· "Show trailing whitespace"
    set linebreak     "Don't split lines mid-word
    "Make Y behave like the other operator capitals
    noremap Y y$
@@ -76,7 +75,7 @@ endif "}}}
    set tabstop=2    "Number of spaces a tab mimics
    set softtabstop=2 "Ensure spaces can be easily deleted
    set shiftwidth=2 "?
-	set expandtab   "Enable for tabs to become spaces
+   set expandtab   "Enable for tabs to become spaces
 "}}}
 
 "Search options{{{
@@ -127,12 +126,15 @@ endif "}}}
    "Binding operator keys is bad idea =/
    "Arpeggio nnoremap qewr :close<cr>
    "Arpeggio nnoremap ewr :Extradite<cr>
+   "EasyMotion:
+   Arpeggio nnoremap we <c-b>
    "Yankring:
    Arpeggio nnoremap ui :YRShow<cr>
    Arpeggio nmap op <c-n>
    Arpeggio nmap io <c-p>
    " Arpeggio nnoremap qwe :NERDTreeToggle<cr>
    "Saving:
+   Arpeggio nnoremap qwer :wq<cr>
    Arpeggio nnoremap qw :w<cr>
    Arpeggio inoremap qw <Esc>:w<cr>
    "Comment:
@@ -223,15 +225,19 @@ endif "}}}
    "nnoremap <Leader>e :CommandT<CR>
    "nnoremap <Leader>o :CommandT<CR>
    "nnoremap <Leader>O :CommandTBuffer<CR>
-	nnoremap <Leader>o :CtrlP<CR>
-	nnoremap <Leader>i :CtrlPTag<CR>
-	let g:ctrlp_extensions = [ 'tag' ]
-	"nnoremap <Leader>
+   "nnoremap <Leader>o :CtrlP<CR>
+   nnoremap <Leader>i :CtrlPTag<CR>
+   let g:ctrlp_extensions = [ 'tag' ]
+   "nnoremap <Leader>
    "Comment: toggle
-   nmap <Leader>, ,c 
-   vmap <Leader>, ,c 
+   "nmap <Leader>, ,c 
+   "vmap <Leader>, ,c 
 
+   "Ack/Ag:
    map <Leader>a :Ack 
+
+   "EasyMotion:
+   "let g:EasyMotion_leader_key = '<c-b>'
 
    " Repeat last command action?
    "inoremap <c-.> <Esc>:<c-p><cr>
@@ -247,9 +253,10 @@ endif "}}}
 "}}}
 
 "Regex stuff {{{
-nnoremap / /\v
-vnoremap / /\v
-set gdefault   "Set substitution to global default
+  "Use normal regex behavior by default instead of literal matching
+  "nnoremap / /\v
+  "vnoremap / /\v
+  set gdefault   "Set substitution to global default
 "}}}
 
 "Completion {{{
@@ -269,7 +276,7 @@ set gdefault   "Set substitution to global default
    " let g:neocomplcache_enable_auto_select=1
    " autocmd FileType java setlocal omnifunc="<c-x><c-u>"
     "autocmd FileType java inoremap . .<c-x><c-u>
-	 "autocmd FileType java 
+   "autocmd FileType java 
     au FileType xjb set filetype=xml
     au FileType cup set filetype=java
    " inoremap <a-j> <c-n>
@@ -415,15 +422,15 @@ function! GetVisual() range
   let cb_save = &clipboard
   set clipboard&
   "Put the current visual selection in the " register 
-	normal! ""gvy
+  normal! ""gvy
   let selection = getreg('"')
   " Put the saved registers and clipboards back
   call setreg('"', reg_save, regtype_save)
   let &clipboard = cb_save
 
-	"Escape any special characters in the selection
+  "Escape any special characters in the selection
 
-	let escaped_selection = EscapeString(selection)
+  let escaped_selection = EscapeString(selection)
   return escaped_selection
 endfunction
 
