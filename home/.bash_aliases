@@ -5,7 +5,7 @@ if [[ -n "$(uname --all | grep --ignore-case --perl-regex 'debian|ubuntu|mint')"
     alias ack='ack-grep'
 fi
 
-if [[ -n "$(ls ~/.utils/bin/ag)" ]]; then
+if [[ -f "${HOME}/.utils/bin/ag" ]]; then
   alias ag="${HOME}/.utils/bin/ag"
 fi
 
