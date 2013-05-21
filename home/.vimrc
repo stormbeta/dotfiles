@@ -34,7 +34,7 @@ endif
 "GUI Options {{{
 au GUIEnter * set lines=43 columns=95
 if has('gui_running')
-   " colorscheme solarized
+    "colorscheme solarized
    colorscheme mustang
    set cursorline "highlights current line, looks terrible in console
    " set guifont=Monaco\ 12 "Warning: special font
@@ -126,17 +126,13 @@ endif "}}}
    "Binding operator keys is bad idea =/
    "Arpeggio nnoremap qewr :close<cr>
    "Arpeggio nnoremap ewr :Extradite<cr>
-   "EasyMotion:
-   Arpeggio nnoremap we <c-b>
-   "Yankring:
-   Arpeggio nnoremap ui :YRShow<cr>
-   Arpeggio nmap op <c-n>
-   Arpeggio nmap io <c-p>
    " Arpeggio nnoremap qwe :NERDTreeToggle<cr>
    "Saving:
-   Arpeggio nnoremap qwer :wq<cr>
+   "Arpeggio nnoremap qwer :wq<cr>
    Arpeggio nnoremap qw :w<cr>
    Arpeggio inoremap qw <Esc>:w<cr>
+   "EasyMotion:
+   Arpeggio nnoremap we <Leader>ww
    "Comment:
    call arpeggio#map('nv','',1,'re',',c ')
    "Arpeggio nnoremap fg [{zf]}
@@ -237,7 +233,7 @@ endif "}}}
    map <Leader>a :Ack 
 
    "EasyMotion:
-   "let g:EasyMotion_leader_key = '<c-b>'
+   let g:EasyMotion_leader_key = '<Leader>w'
 
    " Repeat last command action?
    "inoremap <c-.> <Esc>:<c-p><cr>
@@ -441,4 +437,4 @@ vnoremap <C-r> <Esc>:%s/<c-r>=GetVisual()<cr>/
 set t_Co=256
 colorscheme mustang
 highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+"highlight NonText ctermbg=none
