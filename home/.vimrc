@@ -124,11 +124,10 @@ endif "}}}
 "Commands (ARPEGGIO) {{{
    "Arpeggio: Bindings (must come first)
    "Binding operator keys is bad idea =/
-   "Arpeggio nnoremap qewr :close<cr>
    "Arpeggio nnoremap ewr :Extradite<cr>
    " Arpeggio nnoremap qwe :NERDTreeToggle<cr>
    "Saving:
-   "Arpeggio nnoremap qwer :wq<cr>
+   Arpeggio nnoremap qwer :wq<cr>
    Arpeggio nnoremap qw :w<cr>
    Arpeggio inoremap qw <Esc>:w<cr>
    "EasyMotion:
@@ -187,6 +186,9 @@ endif "}}}
    "omap ob i,b
    "Write file as markdown
     nnoremap <Leader>m :w<cr>:silent !Markdown.pl % > %.html<cr>
+
+   "Sudo write:
+   cmap w!! w !sudo tee > /dev/null %
 
    "This only works if the terminal is set correctly
    "Saves: and returns to command mode
@@ -437,4 +439,4 @@ vnoremap <C-r> <Esc>:%s/<c-r>=GetVisual()<cr>/
 set t_Co=256
 colorscheme mustang
 highlight Normal ctermbg=none
-"highlight NonText ctermbg=none
+highlight NonText ctermbg=none
