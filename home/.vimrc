@@ -19,6 +19,7 @@ au FileType * setlocal formatoptions-=o
 au BufReadPost *.cup setlocal filetype=java
 au BufReadPost *.pig setlocal filetype=pig
 au BufReadPost *.as setlocal filetype=actionscript
+"au BufReadPost *.proto setlocal filetype=proto
 au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead *.pp setf ruby
 
@@ -126,20 +127,22 @@ endif "}}}
    "Binding operator keys is bad idea =/
    "Arpeggio nnoremap ewr :Extradite<cr>
    " Arpeggio nnoremap qwe :NERDTreeToggle<cr>
+   "Surround:
+   Arpeggio nmap oi ysiw
    "Saving:
    Arpeggio nnoremap qwer :wq<cr>
    Arpeggio nnoremap qw :w<cr>
    Arpeggio inoremap qw <Esc>:w<cr>
    "EasyMotion:
-   Arpeggio nnoremap we <Leader>ww
+   Arpeggio nnoremap we <Leader>w
    "Comment:
    call arpeggio#map('nv','',1,'re',',c ')
    "Arpeggio nnoremap fg [{zf]}
    "au FileType java Arpeggio imap ui <c-x><c-u>
    Arpeggio nnoremap /. :%!perl -pi -e 's//'<left><left>
    Arpeggio vnoremap /. :!perl -pi -e 's//'<left><left>
-   "Crazy:
-   Arpeggio omap ui i,w
+   "Crazy: Does this even work?
+   "Arpeggio omap ui i,w
    "Buffers: mappings{{{
       "call arpeggio#map('nv','',0,
    "}}}
@@ -157,14 +160,15 @@ endif "}}}
    Arpeggio nnoremap nm :!make<cr>
    Arpeggio nnoremap NM :!make test<cr>
 
+
    "Zen Coding{{{
       " au FileType html,xml Arpeggio imap uio <c-y>,>
-      au FileType html,xml Arpeggio imap ui <c-y>,<cr><Esc>ko
-      au FileType html,xml Arpeggio imap uio <c-y>,
+      "au FileType html,xml Arpeggio imap ui <c-y>,<cr><Esc>ko
+      "au FileType html,xml Arpeggio imap uio <c-y>,
       " au FileType html,xml Arpeggio vmap ui <c-y>,
-      au FileType html,xml Arpeggio imap op <c-y>n
-      au FileType html,xml Arpeggio imap io <c-y>N
-      au FileType html,xml Arpeggio nmap re <c-y>/
+      "au FileType html,xml Arpeggio imap op <c-y>n
+      "au FileType html,xml Arpeggio imap io <c-y>N
+      "au FileType html,xml Arpeggio nmap re <c-y>/
    "}}}
 "}}}
 
@@ -223,7 +227,7 @@ endif "}}}
    "nnoremap <Leader>e :CommandT<CR>
    "nnoremap <Leader>o :CommandT<CR>
    "nnoremap <Leader>O :CommandTBuffer<CR>
-   "nnoremap <Leader>o :CtrlP<CR>
+   nnoremap <Leader>o :CtrlP<CR>
    nnoremap <Leader>i :CtrlPTag<CR>
    let g:ctrlp_extensions = [ 'tag' ]
    "nnoremap <Leader>

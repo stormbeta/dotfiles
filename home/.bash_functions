@@ -47,7 +47,9 @@ function updatehome {
     #TODO Update this as the install script no longer exists
     #Possibly fork homeshick
     cp -r ${HOME}/.ssh ${HOME}/.ssh_bkup
-    curl -sL https://raw.github.com/andsens/homeshick/master/install.sh | bash
+    #curl -sL https://raw.github.com/andsens/homeshick/master/install.sh | bash
+    git clone git://github.com/andsens/homeshick.git ${HOME}/.homesick/repos/homeshick
+    ln -s "${HOME}/.homesick/repos/homeshick/home/.homeshick" "${HOME}/.homeshick"
     ${homesick} clone stormbeta/dotfiles
   fi
 
@@ -65,12 +67,13 @@ function updatehome {
 }
 
 #TODO: Sort ssh keys before enabling this
-#function initializehome {
- #local target=${1}
+function initializehome {
+ local target=${1}
 
- #ssh-copy-id ${target}
- #ssh -At ${target} "$(declare -f updatehome); updatehome; bash -l"
-#}
+ ssh-copy-id ${target}
+ #scp "${HOME}/.homeshick" ${target}:.homeshick
+ ssh -At ${target} "$(declare -f updatehome); updatehome; bash -l"
+}
 
 # Alias a command with a replacement only if both exist.
 function smart-alias() {

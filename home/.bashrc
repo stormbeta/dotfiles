@@ -28,6 +28,7 @@ chmod 700 ~/.homesick/*
 
 # don't put duplicate lines in the history. See bash(1) for more options
 HISTCONTROL=ignoreboth
+export DEPLOY_DIR='/home/jmiller/git/deploy'
 
 # Use ^X instead of ^S (^S used as save in vim)
 stty -ixon

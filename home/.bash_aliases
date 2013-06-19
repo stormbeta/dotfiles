@@ -9,6 +9,10 @@ if [[ -f "${HOME}/.utils/bin/ag" ]]; then
   alias ag="${HOME}/.utils/bin/ag"
 fi
 
+if [[ -f "${HOME}/git/hue" ]]; then
+  alias hue="${HOME}/git/hue/bin/hue"
+fi
+
 alias gack="ack '\.(gradle|properties|xml)'"
 
 alias ls='ls --color=auto'
