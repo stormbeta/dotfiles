@@ -12,6 +12,7 @@
     email = jason.miller@readytalk.com
 
 [alias]
+    commit-interactive = commit --patch -v
     unstage = reset HEAD
     untrack = rm --cached
     st = status
@@ -23,12 +24,10 @@
     svn-update = svn rebase
     svn-commit = svn dcommit
     whatadded = log --diff-filter=A
-    cleanse = clean -Xfd
+    cleanse = clean -xfd
     rev-grep = "!f(){ git grep ${1} $(git rev-list --all); }; f"
-    ;RESET = "!f(){ git reset --hard origin/$(git status --porcelain --bsuno | sed -r 's/## (.*)/\1/\'); }; f"
-    squish = rebase -i --onto master
+    squish = rebase -i --onto origin/master
     update = "!f(){ git fetch; git pull origin $(git status -sb --porcelain | grep -oP '\\w+'); }; f"
-    ;update = "!g(){ git fetch; git pull origin $(git status -sb --porcelain | grep -Po '\w+'); }; g"
 
 [sendemail]
     ;smtpserver smtp.gmail.com

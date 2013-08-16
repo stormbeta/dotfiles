@@ -63,7 +63,7 @@ function execute_gradle() {
 
   # Say what we are gonna do, then do it.
   echo -e "Using gradle at '${gradle}' to run '${build_gradle}':\n"
-  "${gradle}" ${GW_ARGS}
+  "${gradle}" --daemon ${GW_ARGS}
 }
 
 set -e

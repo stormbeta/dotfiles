@@ -5,14 +5,10 @@ let mapleader = ","    "<Leader> = ','
    call pathogen#infect() "Modular plugin directories!
    call arpeggio#load()   "Key chord binding!
    call showmarks#ShowMarks('global,enable') "Visual marks
+   set runtimepath^=~/.vim/bundle/ctrlp.vim
    filetype plugin indent on
    "let g:neocomplcache_enable_at_startup=1 "Popup omnicompletion
 "}}}
-
-"FANCIES
-"highlight Normal ctermbg=none
-"highlight Comment ctermbg=none
-"highlight Folded ctermbg=none
 
 "Formating and Filetypes
 au FileType * setlocal formatoptions-=o
@@ -35,14 +31,13 @@ endif
 "GUI Options {{{
 au GUIEnter * set lines=43 columns=95
 if has('gui_running')
-    "colorscheme solarized
    colorscheme mustang
    set cursorline "highlights current line, looks terrible in console
    " set guifont=Monaco\ 12 "Warning: special font
    set guioptions-=T      "Disable toolbar
    set guioptions-=m      "Disable menubar
-   " set guioptions-=r    "Disable right scrollbar
-   " set guioptions-=L    "Disable left scrollbar
+   set guioptions-=r    "Disable right scrollbar
+   set guioptions-=L    "Disable left scrollbar
 else "}}}
    "Console Options {{{
    "colorscheme relaxedgreen
@@ -54,16 +49,16 @@ endif "}}}
    syntax on
    set backspace=indent,eol,start
    set nocompatible "Disable obsolete junk
-   set t_kb=      "Just in case
+   set t_kb=      "Set backspace key just in case system has weird default
    set ruler        "Character/line counts
-   set mouse=a      "Just in case, enable mouse integration
-   set background=dark "Just in case
+   set mouse=a      "Ensure automatic mouse integration is enabled
+   set background=dark "Ensure dark background type
    set nostartofline "Attempt to preserve cursor position
-   set autoread      "Auto-update buffers
+   set autoread      "Auto-update buffers if file is externally modified
    set hidden        "Make buffer switching work normally
-   set showmode      "Should always be on, but just in case
+   set showmode      "Ensure current mode is displayed
    set showcmd       "Display normal mode cmds in lower left
-   set tildeop       "~ behaves like an operator
+   set tildeop       "Ensure ~ behaves like an operator
    set list listchars=tab:→\ ,trail:· "Show trailing whitespace"
    set linebreak     "Don't split lines mid-word
    "Make Y behave like the other operator capitals
@@ -91,11 +86,11 @@ endif "}}}
      set relativenumber "Relative line numbers
      set undofile       "Persistant undo history
      set undodir=~/.vim-backup
+     set aw             "Autosave when appropriate (not 7.3 specific)
    endif
    set backupdir=~/.vim-backup
    " set number       "I like relative better
    set showmatch      "Flash matching parens
-   set aw             "Autosave when appropriate
    set wildmenu       "Menubar
    set wildmode=list:longest
    set scrolloff=4    "Auto-scrolls screen near edges
@@ -103,7 +98,7 @@ endif "}}}
    set modelines=0    "Modelines are security risk
    set viminfo='100,<50,s10,h,n~/.viminfo
    set diffopt+=iwhite "Ignore whitespace in diff mode
-   "Remember last cursor position
+   "Go to last cursor position when reopening file
    au BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \ exe "normal! g`\"" |
@@ -141,14 +136,9 @@ endif "}}}
    "au FileType java Arpeggio imap ui <c-x><c-u>
    Arpeggio nnoremap /. :%!perl -pi -e 's//'<left><left>
    Arpeggio vnoremap /. :!perl -pi -e 's//'<left><left>
-   "Crazy: Does this even work?
-   "Arpeggio omap ui i,w
    "Buffers: mappings{{{
       "call arpeggio#map('nv','',0,
    "}}}
-   "These don't seem to work as expected
-   "Arpeggio cnoremap jk <Esc>:close<cr>
-   "Arpeggio nnoremap jk :close<cr>
    Arpeggio inoremap kj <Esc>
    Arpeggio vnoremap kj <Esc>
    Arpeggio inoremap kl <c-n>
@@ -178,9 +168,9 @@ endif "}}}
    "nnoremap <Leader>/ :%s/\V/
    "Easier command entry
    nnoremap ; :
-   "vnoremap ; :
+   vnoremap ; :
    nnoremap q; q:
-   "vnoremap q; q:
+   vnoremap q; q:
    "nnoremap <space> <cr>
    "CamelCaseMovement: Plugin
    omap ow i,w
@@ -223,13 +213,9 @@ endif "}}}
    nnoremap <silent> <s-\> :bprev<cr>
 
    "Open: fuzzy matching
-   "nnoremap <Leader>w :CommandTBuffer<CR>
-   "nnoremap <Leader>e :CommandT<CR>
-   "nnoremap <Leader>o :CommandT<CR>
-   "nnoremap <Leader>O :CommandTBuffer<CR>
    nnoremap <Leader>o :CtrlP<CR>
    nnoremap <Leader>i :CtrlPTag<CR>
-   let g:ctrlp_extensions = [ 'tag' ]
+   "let g:ctrlp_extensions = [ 'tag' ]
    "nnoremap <Leader>
    "Comment: toggle
    "nmap <Leader>, ,c 
