@@ -215,6 +215,7 @@ endif "}}}
    "Open: fuzzy matching
    nnoremap <Leader>o :CtrlP<CR>
    nnoremap <Leader>i :CtrlPTag<CR>
+   nnoremap <Leader>p :CtrlPBuffer<CR>
    "let g:ctrlp_extensions = [ 'tag' ]
    "nnoremap <Leader>
    "Comment: toggle
