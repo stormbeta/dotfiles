@@ -22,9 +22,6 @@
 [submodule "home/.vim/bundle/vim-surround"]
 	path = home/.vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround
-[submodule "home/.vim/bundle/zencoding-vim"]
-	path = home/.vim/bundle/zencoding-vim
-	url = git://github.com/mattn/zencoding-vim
 [submodule "home/.vim/bundle/vim-gitgutter"]
 	path = home/.vim/bundle/vim-gitgutter
 	url = git@github.com:airblade/vim-gitgutter
