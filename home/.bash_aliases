@@ -15,7 +15,10 @@ fi
 
 alias gack="ack '\.(gradle|properties|xml)'"
 
+#Always enable color
+alias less='less -r'
 alias ls='ls --color=auto'
+
 alias sl='ls'
 alias ll='ls -l'
 alias la='ls -a'
@@ -34,7 +37,6 @@ alias gb='git branch'
 alias gd='git diff'
 alias gcp='git cherry-pick'
 alias gw="${HOME}/.utils/bin/gw"
-alias deploy="${deploy} jmdev"
 
 # git completion for shortcuts
 complete -o default -o nospace -F _git_status g
