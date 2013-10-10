@@ -15,6 +15,10 @@ source ~/.bash_${platform}
     source ~/.bash_aliases
 #fi
 
+if [[ -e "~/.ssh/ssh-agent-setup.sh" ]]; then
+  soruce ~/.ssh/ssh-agent-setup.sh
+fi
+
 if [[ "${platform}" == "darwin" ]]; then
   unalias ls
   alias ls='ls -G'
