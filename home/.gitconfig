@@ -34,3 +34,5 @@
     ;smtpserverport 587
     ;sendemail.smtpencryption tls
     ;smtpuser 
+[diff]
+	algorithm = patience

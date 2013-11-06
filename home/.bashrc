@@ -25,6 +25,8 @@ if [[ "${platform}" == "darwin" ]]; then
 fi
 
 pathmunge "~/bin"
+pathmunge "~/adt-bundle-linux-x86_64-20130917/sdk/platform-tools/"
+pathmunge "~/adt-bundle-linux-x86_64-20130917/sdk/tools/"
 
 chmod 700 ~/.homesick/*
 

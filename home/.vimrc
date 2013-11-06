@@ -1,16 +1,39 @@
 "Primary .vimrc
 let mapleader = ","    "<Leader> = ','
+set nocompatible "Disable obsolete junk
 
 "Load plugins{{{
-   call pathogen#infect() "Modular plugin directories!
-   call arpeggio#load()   "Key chord binding!
-   call showmarks#ShowMarks('global,enable') "Visual marks
+   "call pathogen#infect() "Modular plugin directories!
+   filetype off
+   set rtp+=~/.vim/bundle/vundle
+   call vundle#rc()
    set runtimepath^=~/.vim/bundle/ctrlp.vim
-   filetype plugin indent on
+
+   "Vundle:
+   Bundle 'gmarik/vundle'
+   Bundle 'kana/vim-arpeggio'
+   Bundle 'tpope/vim-fugitive'
+   Bundle 'airblade/vim-gitgutter'
+   Bundle 'croaker/mustang-vim'
+   Bundle 'kien/ctrlp.vim'
+   Bundle 'juanpabloaj/ShowMarks'
+   Bundle 'millermedeiros/vim-statline'
+   Bundle 'scrooloose/nerdcommenter'
+   Bundle 'rking/ag.vim'
+   Bundle 'mileszs/ack.vim'
+   Bundle 'sjl/gundo.vim'
+   Bundle 'vim-scripts/camelcasemotion'
+   Bundle 'int3/vim-extradite'
+   Bundle 'Lokaltog/vim-easymotion'
+   Bundle 'vim-scripts/taglist.vim'
+
+   "call showmarks#ShowMarks('global,enable') "Visual marks
+   call arpeggio#load()   "Key chord binding!
    "let g:neocomplcache_enable_at_startup=1 "Popup omnicompletion
 "}}}
 
 "Formating and Filetypes
+filetype plugin indent on
 au FileType * setlocal formatoptions-=o
 au BufReadPost *.cup setlocal filetype=java
 au BufReadPost *.pig setlocal filetype=pig
@@ -27,6 +50,8 @@ if version >= 703
   "Absolute numbering for editing
   au InsertLeave * :set rnu
 endif
+
+set colorcolumn=120
 
 "GUI Options {{{
 au GUIEnter * set lines=43 columns=95
@@ -48,7 +73,6 @@ endif "}}}
 "Sanity options{{{
    syntax on
    set backspace=indent,eol,start
-   set nocompatible "Disable obsolete junk
    set t_kb=      "Set backspace key just in case system has weird default
    set ruler        "Character/line counts
    set mouse=a      "Ensure automatic mouse integration is enabled

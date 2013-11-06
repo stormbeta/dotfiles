@@ -27,7 +27,6 @@ function git-update {
   git fetch
   git pull origin $(git status -sb --porcelain | grep -Po '\w+')
 }
-  
 
 function update-repos {
   for repo in $(ls "${repo_dir}"); do
