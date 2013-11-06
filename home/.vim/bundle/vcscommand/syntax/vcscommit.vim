@@ -1,1 +1,0 @@
-/home/jmiller/.homesick/repos/dotfiles/home/.vim/bundle/vcscommand/syntax/vcscommit.vim
