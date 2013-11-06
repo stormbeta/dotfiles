@@ -28,10 +28,11 @@ set nocompatible "Disable obsolete junk
    Bundle 'vim-scripts/taglist.vim'
    Bundle 'tpope/vim-surround'
    Bundle 'Valloric/YouCompleteMe'
+   Bundle 'eiginn/netrw'
+   Bundle 'tpope/vim-repeat'
 
    "call showmarks#ShowMarks('global,enable') "Visual marks
    call arpeggio#load()   "Key chord binding!
-   "let g:neocomplcache_enable_at_startup=1 "Popup omnicompletion
 "}}}
 
 "Formating and Filetypes
@@ -43,8 +44,6 @@ au BufReadPost *.as setlocal filetype=actionscript
 "au BufReadPost *.proto setlocal filetype=proto
 au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead *.pp setf ruby
-
-
 
 if version >= 703
   "Relative numbering for movement
@@ -275,9 +274,7 @@ endif "}}}
 "}}}
 
 "Completion {{{
-   "let g:neocomplcache_enable_smart_case=1
-   set completeopt+=longest,menu
-   "let g:SuperTabDefaultCompletionType = "<c-o><c-n>"
+   "set completeopt+=longest,menu
 
    "au FileType java let g:neocomplcache_enable_at_startup=0
    "au FileType java call NeoComplCacheDisable()
