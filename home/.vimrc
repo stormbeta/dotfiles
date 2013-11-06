@@ -26,6 +26,8 @@ set nocompatible "Disable obsolete junk
    Bundle 'int3/vim-extradite'
    Bundle 'Lokaltog/vim-easymotion'
    Bundle 'vim-scripts/taglist.vim'
+   Bundle 'tpope/vim-surround'
+   Bundle 'Valloric/YouCompleteMe'
 
    "call showmarks#ShowMarks('global,enable') "Visual marks
    call arpeggio#load()   "Key chord binding!

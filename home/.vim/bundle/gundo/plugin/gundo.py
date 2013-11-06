@@ -1,1 +1,0 @@
-/home/jmiller/.homesick/repos/dotfiles/home/.vim/bundle/gundo/plugin/gundo.py
