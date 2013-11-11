@@ -42,18 +42,9 @@ set nocompatible "Disable obsolete junk
 filetype plugin indent on
 au FileType * setlocal formatoptions-=o
 au BufReadPost *.cup setlocal filetype=java
-au BufReadPost *.pig setlocal filetype=pig
 au BufReadPost *.as setlocal filetype=actionscript
-"au BufReadPost *.proto setlocal filetype=proto
 au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead *.pp setf ruby
-
-if version >= 703
-  "Relative numbering for movement
-  au InsertEnter * :set nu
-  "Absolute numbering for editing
-  au InsertLeave * :set rnu
-endif
 
 set colorcolumn=120
 
@@ -110,6 +101,7 @@ endif "}}}
 "}}}
 
 "Misc options {{{
+   set number
    if version >= 703
      set relativenumber "Relative line numbers
      set undofile       "Persistant undo history
@@ -250,8 +242,14 @@ endif "}}}
    "nmap <Leader>, ,c 
    "vmap <Leader>, ,c 
 
-   "Ack/Ag:
-   map <Leader>a :Ack 
+   "Ack backup
+   map <Leader>A :Ack 
+
+   "Ag default
+   let g:agprg="~/.utils/bin/ag --column"
+   map <Leader>a :Ag 
+
+
 
    "EasyMotion:
    let g:EasyMotion_leader_key = '<Leader>w'

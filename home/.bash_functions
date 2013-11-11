@@ -56,8 +56,8 @@ function updatehome {
   # Update homesick repos.
   ${homesick} pull && ${homesick} symlink
   source ${HOME}/.bashrc
-  ( cd ${HOME}/.vim; make install )
-  ( cd ${HOME}/.utils; ./setup.sh )
+  #( cd ${HOME}/.vim; make install )
+  #( cd ${HOME}/.utils; ./setup.sh )
 
   # Restore .ssh if needed.
   if [[ -d ${HOME}/.ssh_bkup ]]; then
